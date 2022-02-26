@@ -134,6 +134,7 @@ function App() {
         setIsLoadingPostMessage(false)
         if (!data.ok) {
           setPostMessageError(data.message)
+          // 如果不能夠好好送出，回傳error的訊息
         }
         setValue('')
         // 送出留言 ---->變成空字串
@@ -153,6 +154,7 @@ function App() {
       {isLoadingPostMessage && <Loading>Loading...</Loading>}
       <Title>留言板</Title>
       <MessageForm onSubmit={handleFormSubmit}>
+      {/* onsubmit的觸發 要寫在form上面 */}
         <MessageTextArea
           rows={10}
           value={value}
