@@ -7,9 +7,11 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <App />
+      {/* 把app這個元件渲染到下面的根節點  */}
   </React.StrictMode>,
   document.getElementById('root')
 );
+// 把虛擬dom轉成真實dom
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
