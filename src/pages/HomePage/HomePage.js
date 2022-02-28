@@ -7,10 +7,11 @@ import PropTypes from 'prop-types'
 const Root = styled.div`
   width: 80%;
   margin: 0 auto;
+  ${'' /* border: 1px solid red; */}/
 `
 
 const PostContainer = styled.div`
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(225, 225, 225, 0.2);
   padding: 16px;
   display: flex;
   align-items: center;
@@ -24,7 +25,7 @@ const PostTitle = styled(Link)`
 `
 
 const PostDate = styled.div`
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(225, 225, 225, 0.5);
 `
 
 function Post({ post }) {

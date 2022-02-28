@@ -6,9 +6,14 @@ import HomePage from './pages/HomePage'
 import SinglePostPage from './pages/SinglePostPage'
 import Header from './components/Header'
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
+import ForumNav from './components/Forum-Nav'
 
 const Root = styled.div`
-  padding-top: 64px;
+  margin-top: 64px;
+  background: black;
+`
+const AllDisplayFlex = styled.div`
+  display: flex;
 `
 
 function App() {
@@ -16,17 +21,20 @@ function App() {
     <Root>
       <Router>
         <Header />
-        <Switch>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
-          <Route path="/posts/:id">
-            <SinglePostPage />
-          </Route>
-          <Route exact path="/logIn">
-            <LogInPage />
-          </Route>
-        </Switch>
+        <AllDisplayFlex>
+          <ForumNav />
+          <Switch>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
+            <Route path="/posts/:id">
+              <SinglePostPage />
+            </Route>
+            <Route exact path="/logIn">
+              <LogInPage />
+            </Route>
+          </Switch>
+        </AllDisplayFlex>
       </Router>
     </Root>
   )
