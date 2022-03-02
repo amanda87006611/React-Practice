@@ -28,6 +28,7 @@ function App() {
               <HomePage />
             </Route>
             <Route path="/posts/:id">
+              {/* 動態路徑不能加exact path */}
               <SinglePostPage />
             </Route>
             <Route exact path="/logIn">

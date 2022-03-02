@@ -24,6 +24,7 @@ export default function LogInPage() {
       localStorage.setItem('token', token)
       // 拿到&設定token
       history.push('/')
+      // history 搭配push
       // useHistory()-> 回到首頁的路由
     })
   }

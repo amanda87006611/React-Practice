@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import { getPost } from '../../data/WebApi'
 // import PropTypes from 'prop-types'
 
-import ForumNav from '../../components/Forum-Nav'
+// import ForumNav from '../../components/Forum-Nav'
 
 const Root = styled.div`
   width: 80%;
