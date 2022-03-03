@@ -31,9 +31,9 @@ const PostDate = styled.div`
 function Post({ post }) {
   return (
     <PostContainer>
-      <PostTitle to={`/posts/${post.id}`}>{post.title}</PostTitle>
+      <PostTitle to={`/posts/${post.id}`}>{post.art_title}</PostTitle>
       {/* Link to */}
-      <PostDate>{new Date(post.createdAt).toLocaleString()}</PostDate>
+      <PostDate>{new Date(post.art_create_time).toLocaleString()}</PostDate>
     </PostContainer>
   )
 }
@@ -46,9 +46,7 @@ export default function HomePage() {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    fetch(
-      'https://student-json-api.lidemy.me/posts?_sort=createdAt&_order=DESC'
-    )
+    fetch('http://localhost:3000/forum-list-connectTry')
       .then((res) => res.json())
       .then((posts) => setPosts(posts))
   }, [])
