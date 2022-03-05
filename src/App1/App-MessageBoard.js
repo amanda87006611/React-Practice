@@ -119,16 +119,19 @@ function App() {
       return
     }
     setIsLoadingPostMessage(true)
-    fetch('https://student-json-api.lidemy.me/comments?_sort=id&_order=DESC', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        nickname: 'Amanda',
-        body: value,
-      }),
-    })
+    fetch(
+      'https://student-json-api.lidemy.me/comments?_sort=id&_order=DESC%27',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          nickname: 'Amanda',
+          body: value,
+        }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setIsLoadingPostMessage(false)
@@ -154,7 +157,7 @@ function App() {
       {isLoadingPostMessage && <Loading>Loading...</Loading>}
       <Title>留言板</Title>
       <MessageForm onSubmit={handleFormSubmit}>
-      {/* onsubmit的觸發 要寫在form上面 */}
+        {/* onsubmit的觸發 要寫在form上面 */}
         <MessageTextArea
           rows={10}
           value={value}

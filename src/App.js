@@ -27,7 +27,7 @@ function App() {
             <Route exact path="/">
               <HomePage />
             </Route>
-            <Route path="/posts/:id">
+            <Route path="/posts/:sid">
               <SinglePostPage />
             </Route>
             <Route exact path="/logIn">

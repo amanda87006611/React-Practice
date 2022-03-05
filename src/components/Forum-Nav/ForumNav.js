@@ -23,41 +23,36 @@ export default function ForumNav() {
           </div>
         </li>
         <li>
-          <p style={{ marginTop: '15px' }}>CATEGORY</p>
+          <p style={{ marginTop: '15px' }}>文章分類</p>
           <div className="a-group">
             <i className="fa-solid fa-border-all">
-              <a href="/#">All</a>
+              <a href="/#">全部</a>
             </i>
             <i className="fa-solid fa-rocket">
-              <a href="/#">By U-Apextion</a>
+              <a href="/#">U-Apextion文章</a>
             </i>
             <i className="fa-solid fa-users">
-              <a href="/#">By U-Users</a>
+              <a href="/#">會員文章</a>
             </i>
-          </div>
-        </li>
-        <li>
-          <p style={{ marginTop: '15px' }}>MENU</p>
-          <div className="a-group">
             <i className="fa-solid fa-question">
-              <a href="/#">Questions</a>
+              <a href="/#">Q&A</a>
             </i>
             <i className="fa-solid fa-tag">
-              <a href="/#">Tags</a>
+              <a href="/#">#Hashtag</a>
             </i>
           </div>
         </li>
         <li>
-          <p style={{ marginTop: '15px' }}>PERSONAL NAVIGATION</p>
+          <p style={{ marginTop: '15px' }}>個人頁面</p>
           <div className="a-group">
             <i className="fa-solid fa-address-card">
-              <a href="/#">Your Posts</a>
+              <a href="/#">個人貼文</a>
             </i>
             <i className="fa-solid fa-heart">
-              <a href="/#">Your Likes</a>
+              <a href="/#">按讚貼文</a>
             </i>
             <i className="fa-solid fa-bookmark">
-              <a href="/#">Your Saves</a>
+              <a href="/#">個人珍藏</a>
             </i>
           </div>
         </li>

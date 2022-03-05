@@ -37,6 +37,7 @@ input:-webkit-autofill {
     top: 0;
     width: 17%;
     height: 100vh;
+    position: sticky;
 }
 .nav ul{
     margin-top: 50px;;
