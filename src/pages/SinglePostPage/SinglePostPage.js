@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useParams, Link } from 'react-router-dom'
 // import { getPost } from '../../data/WebApi'
-import { getPost } from '../../data/WebApi'
+import { getPost, getResponse } from '../../data/WebApi'
 import './SinglePostPage.css'
 // import PropTypes from 'prop-types'
 
@@ -85,12 +85,40 @@ const SinglePostResponses = styled.div``
 
 export default function SinglePostPage() {
   const [post, setPost] = useState(null)
+  const [response, setResponse] = useState(null)
   const { sid } = useParams()
   console.log(useParams(sid))
 
+  function SinglePostResponsesArea({ name, res_content, res_time }) {
+    return (
+      <div class="forum_response_area">
+        <div class="forum_response_user">
+          <div class="forum_response_user_img">
+            <img src="" alt="" />
+          </div>
+          <div class="forum_response_user_name_time">
+            <div class="forum_user_name">@{name}</div>
+            <div class="forum_post_time">{res_time}</div>
+          </div>
+        </div>
+        <div class="forum_response_message_area">
+          <div class="forum_message">{res_content}</div>
+          <div class="forum_likes_icon">
+            <i class="fa-solid fa-heart">{/* <a href="#"></a> */}</i>
+            33
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   useEffect(() => {
-    getPost(sid).then((post) => setPost(post[0]))
+    getPost(sid).then((post) => setPost(post))
   }, [sid])
+
+  useEffect(() => {
+    getResponse(sid).then((response) => setResponse(response))
+  })
 
   return (
     <Root>
@@ -120,46 +148,18 @@ export default function SinglePostPage() {
           <div>
             <div class="forum_responses">
               <div class="forum_responses_number">15 Responses</div>
-              <div class="forum_response_area">
-                <div class="forum_response_user">
-                  <div class="forum_response_user_img">
-                    <img src="" alt="" />
-                  </div>
-                  <div class="forum_response_user_name_time">
-                    <div class="forum_user_name">@amandachius</div>
-                    <div class="forum_post_time">12 November 2020 19:35</div>
-                  </div>
-                </div>
-                <div class="forum_response_message_area">
-                  <div class="forum_message">收到收到！！！</div>
-                  <div class="forum_likes_icon">
-                    <i class="fa-solid fa-heart">
-                      <a href="#"></a>
-                    </i>
-                    33
-                  </div>
-                </div>
-              </div>
-              <div class="forum_response_area">
-                <div class="forum_response_user">
-                  <div class="forum_response_user_img">
-                    <img src="" alt="" />
-                  </div>
-                  <div class="forum_response_user_name_time">
-                    <div class="forum_user_name">@amandachius</div>
-                    <div class="forum_post_time">12 November 2020 19:35</div>
-                  </div>
-                </div>
-                <div class="forum_response_message_area">
-                  <div class="forum_message">收到收到！！！</div>
-                  <div class="forum_likes_icon">
-                    <i class="fa-solid fa-heart">
-                      <a href="#/"></a>
-                    </i>
-                    33
-                  </div>
-                </div>
-              </div>
+
+              {response &&
+                response.map((v, i) => {
+                  return (
+                    <SinglePostResponsesArea
+                      key={v.res_art_sid}
+                      name={v.name}
+                      res_time={new Date(v.res_time).toLocaleString()}
+                      res_content={v.res_content}
+                    ></SinglePostResponsesArea>
+                  )
+                })}
             </div>
             <div class="forum_response_here">
               <div class="forum_response_block">

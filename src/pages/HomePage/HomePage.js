@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import './HomePage.css'
 
 const Root = styled.div`
-  border: 1px solid red;
+  ${'' /* border: 1px solid red; */}
   width: 100%;
   margin: 0 auto;
   ${'' /* border: 1px solid red; */}/

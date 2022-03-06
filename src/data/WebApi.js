@@ -1,7 +1,13 @@
-const BASE_URL = 'http://localhost:3000/forum-list-connectTry'
+const BASE_URL = 'http://localhost:3000/forum_index/list/'
+
+const Response_URL = 'http://localhost:3000/forum_index/res-list/'
 
 export const getPost = (sid) => {
-  return fetch(`${BASE_URL}?sid=${sid}`).then((res) => res.json())
+  return fetch(`${BASE_URL}${sid}`).then((res) => res.json())
+}
+
+export const getResponse = (res_art_sid) => {
+  return fetch(`${Response_URL}${res_art_sid}`).then((res) => res.json())
 }
 
 export const logIn = (username, password) => {
