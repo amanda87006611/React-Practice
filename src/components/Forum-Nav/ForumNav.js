@@ -23,36 +23,60 @@ export default function ForumNav() {
           </div>
         </li>
         <li>
-          <p style={{ marginTop: '15px' }}>文章分類</p>
+          <p
+            style={{ marginTop: '15px', fontSize: '16px', fontWeight: 'bold' }}
+          >
+            文章分類
+          </p>
           <div className="a-group">
             <i className="fa-solid fa-border-all">
-              <a href="/#">全部</a>
+              <a href="/#" className="forum_nav_item">
+                全部
+              </a>
             </i>
             <i className="fa-solid fa-rocket">
-              <a href="/#">U-Apextion文章</a>
+              <a href="/#" className="forum_nav_item">
+                U-Apextion文章
+              </a>
             </i>
             <i className="fa-solid fa-users">
-              <a href="/#">會員文章</a>
+              <a href="/#" className="forum_nav_item">
+                會員文章
+              </a>
             </i>
             <i className="fa-solid fa-question">
-              <a href="/#">Q&A</a>
+              <a href="/#" className="forum_nav_item">
+                Q&A
+              </a>
             </i>
             <i className="fa-solid fa-tag">
-              <a href="/#">#Hashtag</a>
+              <a href="/#" className="forum_nav_item">
+                #Hashtag
+              </a>
             </i>
           </div>
         </li>
         <li>
-          <p style={{ marginTop: '15px' }}>個人頁面</p>
+          <p
+            style={{ marginTop: '15px', fontSize: '16px', fontWeight: 'bold' }}
+          >
+            個人頁面
+          </p>
           <div className="a-group">
             <i className="fa-solid fa-address-card">
-              <a href="/#">個人貼文</a>
+              <a href="/#" className="forum_nav_item">
+                個人貼文
+              </a>
             </i>
             <i className="fa-solid fa-heart">
-              <a href="/#">按讚貼文</a>
+              <a href="/#" className="forum_nav_item">
+                按讚貼文
+              </a>
             </i>
             <i className="fa-solid fa-bookmark">
-              <a href="/#">個人珍藏</a>
+              <a href="/#" className="forum_nav_item">
+                個人珍藏
+              </a>
             </i>
           </div>
         </li>

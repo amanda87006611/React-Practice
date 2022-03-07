@@ -6,35 +6,35 @@ import HomePage from './pages/HomePage'
 import SinglePostPage from './pages/SinglePostPage'
 import Header from './components/Header'
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
-import ForumNav from './components/Forum-Nav'
+// import ForumNav from './components/Forum-Nav'
 
 const Root = styled.div`
   margin-top: 64px;
   background: black;
 `
-const AllDisplayFlex = styled.div`
-  display: flex;
-`
+// const AllDisplayFlex = styled.div`
+//   display: flex;
+// `
 
 function App() {
   return (
     <Root>
       <Router>
         <Header />
-        <AllDisplayFlex>
-          <ForumNav />
-          <Switch>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-            <Route path="/posts/:sid">
-              <SinglePostPage />
-            </Route>
-            <Route exact path="/logIn">
-              <LogInPage />
-            </Route>
-          </Switch>
-        </AllDisplayFlex>
+        {/* <AllDisplayFlex> */}
+        {/* <ForumNav /> */}
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route path="/posts/:sid">
+            <SinglePostPage />
+          </Route>
+          <Route exact path="/logIn">
+            <LogInPage />
+          </Route>
+        </Switch>
+        {/* </AllDisplayFlex> */}
       </Router>
     </Root>
   )

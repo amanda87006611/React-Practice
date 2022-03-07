@@ -1,5 +1,5 @@
 .forum_responses {
-  width: 80%;
+  width: 95%;
   background: #000;
   /* height: 1000px; */
   margin: 0 auto;
@@ -49,7 +49,7 @@
   color: #808080;
 }
 .forum_response_here {
-  width: 80%;
+  width: 95%;
   /* border: 1px solid pink; */
   position: sticky;
   bottom: 0;
