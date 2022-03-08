@@ -4,8 +4,10 @@ import styled from 'styled-components'
 import LogInPage from './pages/LogInPage'
 import HomePage from './pages/HomePage'
 import SinglePostPage from './pages/SinglePostPage'
+import PublishPage from './pages/PublishPage'
 import Header from './components/Header'
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
+
 // import ForumNav from './components/Forum-Nav'
 
 const Root = styled.div`
@@ -29,6 +31,9 @@ function App() {
           </Route>
           <Route path="/posts/:sid">
             <SinglePostPage />
+          </Route>
+          <Route path="/publish">
+            <PublishPage />
           </Route>
           <Route exact path="/logIn">
             <LogInPage />

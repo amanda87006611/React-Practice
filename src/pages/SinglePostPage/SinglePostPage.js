@@ -97,20 +97,20 @@ export default function SinglePostPage() {
 
   function SinglePostResponsesArea({ name, res_content, res_time }) {
     return (
-      <div class="forum_response_area">
-        <div class="forum_response_user">
-          <div class="forum_response_user_img">
+      <div className="forum_response_area">
+        <div className="forum_response_user">
+          <div className="forum_response_user_img">
             <img src="" alt="" />
           </div>
-          <div class="forum_response_user_name_time">
-            <div class="forum_user_name">@{name}</div>
-            <div class="forum_post_time">{res_time}</div>
+          <div className="forum_response_user_name_time">
+            <div className="forum_user_name">@{name}</div>
+            <div className="forum_post_time">{res_time}</div>
           </div>
         </div>
-        <div class="forum_response_message_area">
-          <div class="forum_message">{res_content}</div>
-          <div class="forum_likes_icon">
-            <i class="fa-solid fa-heart">{/* <a href="#"></a> */}</i>
+        <div className="forum_response_message_area">
+          <div className="forum_message">{res_content}</div>
+          <div className="forum_likes_icon">
+            <i className="fa-solid fa-heart">{/* <a href="#"></a> */}</i>
             33
           </div>
         </div>
@@ -154,8 +154,8 @@ export default function SinglePostPage() {
   }
 
   useEffect(() => {
-    // fetchMessage()
-  })
+    fetchMessage()
+  }, [])
 
   return (
     <Root>
@@ -179,14 +179,17 @@ export default function SinglePostPage() {
             </SinglePostCat>
             <SinglePostTitle>{post && post.art_title}</SinglePostTitle>
             <SinglePostContent>
-              {post && post.art_content.replace(/\n|\r\n/g, <br />)}
-              {/* ???????? */}
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: post && post.art_content.split('\r\n').join('<br/>'),
+                }}
+              />
             </SinglePostContent>
           </SinglePostContainer>
           <SinglePostResponses>
             <div>
-              <div class="forum_responses">
-                <div class="forum_responses_number">15 Responses</div>
+              <div className="forum_responses">
+                <div className="forum_responses_number">15 Responses</div>
 
                 {response &&
                   response.map((v, i) => {
@@ -200,8 +203,8 @@ export default function SinglePostPage() {
                     )
                   })}
               </div>
-              <div class="forum_response_here">
-                <div class="forum_response_block">
+              <div className="forum_response_here">
+                <div className="forum_response_block">
                   <form action="" onSubmit={handleFormSubmit}>
                     <input
                       type="text"
@@ -210,10 +213,10 @@ export default function SinglePostPage() {
                       onChange={handleInputChange}
                       // onFocus={handleInputFocus}
                     />
-                    <div class="forum_button_group">
+                    <div className="forum_button_group">
                       <button>Cancel</button>
                       <button>
-                        <i class="fa-thin fa-paper-plane-top"></i>Send
+                        <i className="fa-thin fa-paper-plane-top"></i>Send
                       </button>
                     </div>
                   </form>
@@ -223,50 +226,50 @@ export default function SinglePostPage() {
           </SinglePostResponses>
         </SinglePost>
         {/* col-right */}
-        <div class="col-right">
-          <div class="col">
-            <div class="card-2">
-              <ul class="list-group">
-                <li class="list-group-item">
+        <div className="col-right">
+          <div className="col">
+            <div className="card-2">
+              <ul className="list-group">
+                <li className="list-group-item">
                   <p style={{ fontSize: '16px' }}>
-                    {/* <i class="far fa-star"></i> */}
+                    {/* <i className="far fa-star"></i> */}
                     發文前必讀
                   </p>
                   <ul>
                     <li>
-                      <i class="fas fa-link forum_link"></i>
+                      <i className="fas fa-link forum_link"></i>
                       <a href="#/" className="forum_link_item">
                         請查明發文版規後，再進行貼文
                       </a>
                     </li>
                     <li>
-                      <i class="fas fa-link forum_link"></i>
+                      <i className="fas fa-link forum_link"></i>
                       <a href="#/" className="forum_link_item">
                         有任何疑問 請洽u-apexion客服
                       </a>
                     </li>
                   </ul>
                 </li>
-                <li class="list-group-item">
+                <li className="list-group-item">
                   <p style={{ fontSize: '16px' }}>
-                    {/* <i class="fas fa-link"></i> */}
+                    {/* <i className="fas fa-link"></i> */}
                     本月推薦
                   </p>
                   <ul>
                     <li>
-                      <i class="fas fa-link forum_link"></i>
+                      <i className="fas fa-link forum_link"></i>
                       <a href="#/" className="forum_link_item">
                         主打行程
                       </a>
                     </li>
                     <li>
-                      <i class="fas fa-link forum_link"></i>
+                      <i className="fas fa-link forum_link"></i>
                       <a href="#/" className="forum_link_item">
                         主打服裝＆飾品
                       </a>
                     </li>
                     <li>
-                      <i class="fas fa-link forum_link"></i>
+                      <i className="fas fa-link forum_link"></i>
                       <a href="#/" className="forum_link_item">
                         客製化推薦
                       </a>

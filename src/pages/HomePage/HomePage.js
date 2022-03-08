@@ -15,7 +15,6 @@ const Root = styled.div`
 const AllDisplayFlex = styled.div`
   display: flex;
 `
-
 const PostTitle = styled(Link)`
   font-size: 15px;
   font-weight: bold;
@@ -120,10 +119,12 @@ export default function HomePage() {
             <div class="post">
               <div class="post-group">
                 <div class="post">
-                  <a href="#/" class="forum_justify">
-                    <i class="fas fa-pen"></i>
-                    <div className="forum_sort_text"> POST</div>
-                  </a>
+                  <Link to="/publish">
+                    <a href="#/" class="forum_justify">
+                      <i class="fas fa-pen"></i>
+                      <div className="forum_sort_text"> POST</div>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
