@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 // import { getPost } from '../../data/WebApi'
 import PropTypes from 'prop-types'
 import './HomePage.css'
@@ -25,6 +25,18 @@ const PostTitle = styled(Link)`
 const PostDate = styled.div`
   color: black;
   font-size: 12px;
+`
+const ForumSortNew = styled(Link)`
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  border-radius: 10px;
+  ${(props) =>
+    props.$active &&
+    `
+    border: 1px solid #05f2f2; 
+    background-color:#05f2f2;
+  `}
 `
 
 function Post({ post }) {
@@ -81,6 +93,7 @@ Post.propTypes = {
 }
 
 export default function HomePage() {
+  const location = useLocation()
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
@@ -104,10 +117,14 @@ export default function HomePage() {
                   </a>
                 </div>
                 <div class="sort-new">
-                  <a href="#/" class="forum_justify">
+                  <ForumSortNew
+                    to="/"
+                    $active={location.pathname === '/'}
+                    // class="forum_justify"
+                  >
                     <i class="fas fa-clock"></i>
                     <div className="forum_sort_text">NEW</div>
-                  </a>
+                  </ForumSortNew>
                 </div>
                 <div class="sort-hot">
                   <a href="#/" class="forum_justify">
@@ -246,9 +263,9 @@ export default function HomePage() {
                   <ul>
                     <li>
                       <i class="fas fa-link forum_link"></i>
-                      <a href="#/" className="forum_link_item">
+                      <Link to="/posts/31" className="forum_link_item">
                         請查明發文版規後，再進行貼文
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <i class="fas fa-link forum_link"></i>

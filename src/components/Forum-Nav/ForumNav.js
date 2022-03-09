@@ -1,8 +1,21 @@
 import React from 'react'
-// import styled from 'styled-components'
+import styled from 'styled-components'
 import './ForumNav.css'
+import { Link, useLocation } from 'react-router-dom'
+
+const ForunArticalAll = styled(Link)`
+  display: block;
+  ${(props) =>
+    props.$active &&
+    `
+    background-color:#023E73;
+    border-left:3px solid #05f2f2;
+    text-decoration:none;
+  `}
+`
 
 export default function ForumNav() {
+  const location = useLocation()
   return (
     // <div className="wrap-background">
     // <div className="all-display-flex">
@@ -29,31 +42,38 @@ export default function ForumNav() {
             文章分類
           </p>
           <div className="forum_nav_a-group">
-            <i className="fa-solid fa-border-all">
-              <a href="/#" className="forum_nav_item">
-                全部
-              </a>
-            </i>
-            <i className="fa-solid fa-rocket">
+            <ForunArticalAll to="/" $active={location.pathname === '/'}>
+              <div className="forum_navIcon_adjust">
+                <i className="fa-solid fa-border-all"> </i>
+                <a href="/#" className="forum_nav_item">
+                  全部
+                </a>
+              </div>
+            </ForunArticalAll>
+            <div className="forum_navIcon_adjust">
+              <i className="fa-solid fa-rocket"> </i>
               <a href="/#" className="forum_nav_item">
                 U-Apextion文章
               </a>
-            </i>
-            <i className="fa-solid fa-users">
+            </div>
+            <div className="forum_navIcon_adjust">
+              <i className="fa-solid fa-users"> </i>
               <a href="/#" className="forum_nav_item">
                 會員文章
               </a>
-            </i>
-            <i className="fa-solid fa-question">
+            </div>
+            <div className="forum_navIcon_adjust">
+              <i className="fa-solid fa-question"> </i>
               <a href="/#" className="forum_nav_item">
                 Q&A
               </a>
-            </i>
-            <i className="fa-solid fa-tag">
+            </div>
+            <div className="forum_navIcon_adjust">
+              <i className="fa-solid fa-tag"> </i>
               <a href="/#" className="forum_nav_item">
-                #Hashtag
+                #Hashtags
               </a>
-            </i>
+            </div>
           </div>
         </li>
         <li>
@@ -63,26 +83,27 @@ export default function ForumNav() {
             個人頁面
           </p>
           <div className="a-group">
-            <i className="fa-solid fa-address-card">
+            <div className="forum_navIcon_adjust">
+              <i className="fa-solid fa-address-card"> </i>
               <a href="/#" className="forum_nav_item">
                 個人貼文
               </a>
-            </i>
-            <i className="fa-solid fa-heart">
+            </div>
+            <div className="forum_navIcon_adjust">
+              <i className="fa-solid fa-heart"> </i>
               <a href="/#" className="forum_nav_item">
                 按讚貼文
               </a>
-            </i>
-            <i className="fa-solid fa-bookmark">
+            </div>
+            <div className="forum_navIcon_adjust">
+              <i className="fa-solid fa-bookmark"> </i>
               <a href="/#" className="forum_nav_item">
                 個人珍藏
               </a>
-            </i>
+            </div>
           </div>
         </li>
       </ul>
     </div>
-    // </div>
-    // </div>
   )
 }
