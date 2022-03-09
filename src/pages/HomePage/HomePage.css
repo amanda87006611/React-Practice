@@ -10,7 +10,7 @@
 }
 @media (max-width: 600px) {
   .artical {
-    width: 90%;
+    width: 100%;
   }
 }
 .sort-and-post {
@@ -125,6 +125,11 @@
   color: #000;
   font-weight: 500;
 }
+.ellipsis {
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 
 .article-hashtag a {
   font-weight: bold;
@@ -162,6 +167,13 @@
   position: absolute;
   bottom: -8px;
   right: 7%;
+}
+@media (max-width: 600px) {
+   .like-box{
+     width:90%;
+     left:5%;
+     bottom:-12px;
+   }
 }
 .like-box i {
   /* border:1px solid #fff; */

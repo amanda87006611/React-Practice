@@ -50,12 +50,17 @@ export default function ForumNav() {
                 </a>
               </div>
             </ForunArticalAll>
-            <div className="forum_navIcon_adjust">
-              <i className="fa-solid fa-rocket"> </i>
-              <a href="/#" className="forum_nav_item">
-                U-Apextion文章
-              </a>
-            </div>
+            <ForunArticalAll
+              to="/u-apexion-articles"
+              $active={location.pathname === '/u-apexion-articles'}
+            >
+              <div className="forum_navIcon_adjust">
+                <i className="fa-solid fa-rocket"> </i>
+                <a href="/#" className="forum_nav_item">
+                  U-Apextion文章
+                </a>
+              </div>
+            </ForunArticalAll>
             <div className="forum_navIcon_adjust">
               <i className="fa-solid fa-users"> </i>
               <a href="/#" className="forum_nav_item">
@@ -65,7 +70,7 @@ export default function ForumNav() {
             <div className="forum_navIcon_adjust">
               <i className="fa-solid fa-question"> </i>
               <a href="/#" className="forum_nav_item">
-                Q&A
+                文章分類
               </a>
             </div>
             <div className="forum_navIcon_adjust">

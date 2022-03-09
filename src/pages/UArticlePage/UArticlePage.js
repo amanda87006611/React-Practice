@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Link, useLocation } from 'react-router-dom'
-// import { getPost } from '../../data/WebApi'
 import PropTypes from 'prop-types'
-import './HomePage.css'
-import ForumNav from './../../components/Forum-Nav'
-import PublishPage from './../PublishPage'
+import ForumNav from '../../components/Forum-Nav'
 
 const Root = styled.div`
   ${'' /* border: 1px solid red; */}
@@ -42,6 +39,7 @@ const ForumSortNew = styled(Link)`
 function Post({ post }) {
   return (
     <>
+
       <div class="card">
         <div class="card-body">
           <div class="card-user">
@@ -92,12 +90,12 @@ Post.propTypes = {
   post: PropTypes.object,
 }
 
-export default function HomePage() {
+export default function UArticlePage() {
   const location = useLocation()
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/forum-list-connectTry')
+    fetch('http://localhost:3000/forum_index/UApexion-article')
       .then((res) => res.json())
       .then((posts) => setPosts(posts))
   }, [])
@@ -118,8 +116,8 @@ export default function HomePage() {
                 </div>
                 <div class="sort-new">
                   <ForumSortNew
-                    to="/"
-                    $active={location.pathname === '/'}
+                    to="/u-apexion-articles"
+                    $active={location.pathname === '/u-apexion-articles'}
                     // class="forum_justify"
                   >
                     <i class="fas fa-clock"></i>
@@ -149,63 +147,6 @@ export default function HomePage() {
           </div>
           <div class="row" style={{ marginLeft: '5px', marginRight: '5px' }}>
             <div class="col">
-              <div class="card card-fixed">
-                <div class="card-body">
-                  <div class="card-user">
-                    <div class="user-top">
-                      <div class="user-logo">
-                        {/* <img class="cover" src="" alt="" /> */}
-                      </div>
-                      <div class="user-title">
-                        <div class="user-name">U-Apexion</div>
-                        <div class="post-time">5 min ago</div>
-                      </div>
-                    </div>
-                    <div class="article-title">
-                      <h6>U-Apaxion板規-發文注意事項</h6>
-                    </div>
-                    <div class="article-text">
-                      <p>
-                        一、 禁止使用不雅字眼、中傷、歧視、挑釁或謾罵他人。 二、
-                        為了創造更佳的內容體驗，全面禁止在文章與留言內留下個人聯絡方式或ID。三、
-                        請勿...
-                      </p>
-                    </div>
-                  </div>
-                  <div class="article-hashtag">
-                    <a href="#/" class="card-link">
-                      #板規
-                    </a>
-                    <a href="#/" class="card-link">
-                      #請查明後再發文
-                    </a>
-                  </div>
-                </div>
-                <div class="like-box">
-                  <div class="heart-group">
-                    <i class="fas fa-heart"></i>
-                  </div>
-                  <div class="comments-group">
-                    <i class="fas fa-comment"></i>
-                  </div>
-                  <div class="save-group">
-                    <i class="fas fa-bookmark"></i>
-                  </div>
-                </div>
-                <div class="fixed-box">
-                  <p
-                    style={{
-                      width: '40px',
-                      marginBottom: '0',
-                      marginLeft: 'auto',
-                      marginRight: 'auto',
-                    }}
-                  >
-                    FIXED
-                  </p>
-                  <i class="fas fa-thumbtack"></i>
-                </div>
-              </div>
               {posts.map((post) => (
                 <Post post={post} />
               ))}

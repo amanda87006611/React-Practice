@@ -5,6 +5,7 @@ import LogInPage from './pages/LogInPage'
 import HomePage from './pages/HomePage'
 import SinglePostPage from './pages/SinglePostPage'
 import PublishPage from './pages/PublishPage'
+import UArticlePage from './pages/UArticlePage'
 import Header from './components/Header'
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 
@@ -23,14 +24,15 @@ function App() {
     <Root>
       <Router>
         <Header />
-        {/* <AllDisplayFlex> */}
-        {/* <ForumNav /> */}
         <Switch>
           <Route exact path="/">
             <HomePage />
           </Route>
           <Route path="/posts/:sid">
             <SinglePostPage />
+          </Route>
+          <Route path="/u-apexion-articles">
+            <UArticlePage />
           </Route>
           <Route path="/publish">
             <PublishPage />
@@ -39,7 +41,6 @@ function App() {
             <LogInPage />
           </Route>
         </Switch>
-        {/* </AllDisplayFlex> */}
       </Router>
     </Root>
   )
