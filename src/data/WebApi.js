@@ -10,6 +10,12 @@ export const getResponse = (res_art_sid) => {
   return fetch(`${Response_URL}${res_art_sid}`).then((res) => res.json())
 }
 
+export const getCategory = (art_category_sid) => {
+  return fetch(
+    `http://localhost:3000/forum_index/article-category/${art_category_sid}`
+  ).then((res) => res.json())
+}
+
 export const logIn = (username, password) => {
   return fetch(`${BASE_URL}/login`, {
     method: 'POST',

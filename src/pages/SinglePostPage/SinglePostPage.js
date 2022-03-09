@@ -226,57 +226,21 @@ export default function SinglePostPage() {
           </SinglePostResponses>
         </SinglePost>
         {/* col-right */}
-        <div className="col-right">
-          <div className="col">
-            <div className="card-2">
-              <ul className="list-group">
-                <li className="list-group-item">
-                  <p style={{ fontSize: '16px' }}>
-                    {/* <i className="far fa-star"></i> */}
-                    發文前必讀
-                  </p>
-                  <ul>
-                    <li>
-                      <i className="fas fa-link forum_link"></i>
-                      <a href="#/" className="forum_link_item">
-                        請查明發文版規後，再進行貼文
-                      </a>
-                    </li>
-                    <li>
-                      <i className="fas fa-link forum_link"></i>
-                      <a href="#/" className="forum_link_item">
-                        有任何疑問 請洽u-apexion客服
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li className="list-group-item">
-                  <p style={{ fontSize: '16px' }}>
-                    {/* <i className="fas fa-link"></i> */}
-                    本月推薦
-                  </p>
-                  <ul>
-                    <li>
-                      <i className="fas fa-link forum_link"></i>
-                      <a href="#/" className="forum_link_item">
-                        主打行程
-                      </a>
-                    </li>
-                    <li>
-                      <i className="fas fa-link forum_link"></i>
-                      <a href="#/" className="forum_link_item">
-                        主打服裝＆飾品
-                      </a>
-                    </li>
-                    <li>
-                      <i className="fas fa-link forum_link"></i>
-                      <a href="#/" className="forum_link_item">
-                        客製化推薦
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
+        <div className="col-right ">
+          <div className="col forum_right_colum">
+            <div className="forum_right_card">
+              <div className="forum_right__user_img">
+                <img
+                  className="forum_img"
+                  src="./forum_img/u-apexionLogo.png"
+                  alt=""
+                />
+              </div>
+              <div className="forum_right_user_name">U-Apexion</div>
+              <div className="forum_right_usermedel">
+                <i className="fa-solid fa-medal forum_medal"></i>
+                120 [8]
+              </div>
             </div>
           </div>
         </div>

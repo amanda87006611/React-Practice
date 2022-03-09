@@ -116,3 +116,70 @@
   color: #05f2f2;
   font-size: 16px;
 }
+
+.forum_right_card {
+  /* border: 1px solid red; */
+  margin-top: 80px;
+  background-color: white;
+  padding:30px 30px;
+}
+@media (max-width: 599px) {
+  .forum_right_card {
+    display: none;
+  }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+  .forum_right_card {
+    padding:30px 5px;
+  }
+}
+
+
+.forum_right__user_img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin: 0 auto;
+  border: 1px solid black;
+  background-color:black;
+}
+.forum_right__user_img .forum_img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: contain;
+}
+@media (min-width:600px) and (max-width: 1024px) {
+  .forum_right__user_img {
+    width:85px;
+    height:85px;
+  }
+}
+@media (min-width: 1800px) {
+  .forum_right__user_img {
+    width:150px;
+    height: 150px;
+  }
+}
+.forum_right_user_name {
+  /* border: 1px solid red; */
+  color: black;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #808080;
+}
+@media (min-width: 1800px) {
+  .forum_right_user_name {
+    font-size:20px;
+  }
+}
+.forum_right_usermedel{
+  color: black;
+  text-align: center;
+}
+.forum_medal{
+  margin-top:20px;
+  padding-right:5px;
+}

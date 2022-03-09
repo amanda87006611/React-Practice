@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
+import { getCategory } from '../../data/WebApi'
 import PropTypes from 'prop-types'
 import ForumNav from '../../components/Forum-Nav'
 
@@ -85,18 +86,18 @@ function Post({ post }) {
   )
 }
 
-Post.propTypes = {
-  post: PropTypes.object,
-}
+// Post.propTypes = {
+//   post: PropTypes.object,
+// }
 
-export default function UArticlePage() {
+export default function PostCategoryPage() {
   const location = useLocation()
   const [posts, setPosts] = useState([])
+  const { art_category_sid } = useParams()
+  console.log(useParams(art_category_sid))
 
   useEffect(() => {
-    fetch('http://localhost:3000/forum_index/UApexion-article')
-      .then((res) => res.json())
-      .then((posts) => setPosts(posts))
+    getCategory(art_category_sid).then((post) => setPosts(post))
   }, [])
 
   return (
@@ -162,7 +163,16 @@ export default function UArticlePage() {
                       1
                     </a>
                   </li>
-
+                  <li class="page-item">
+                    <a class="page-link" href="#/">
+                      2
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#/">
+                      3
+                    </a>
+                  </li>
                   <li class="page-item">
                     <a
                       style={{ display: 'inline' }}

@@ -154,7 +154,11 @@ export default function HomePage() {
                   <div class="card-user">
                     <div class="user-top">
                       <div class="user-logo">
-                        {/* <img class="cover" src="" alt="" /> */}
+                        <img
+                          class="cover"
+                          src="./forum_img/u-apexionLogo.png"
+                          alt=""
+                        />
                       </div>
                       <div class="user-title">
                         <div class="user-name">U-Apexion</div>

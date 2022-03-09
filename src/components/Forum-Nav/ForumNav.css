@@ -71,11 +71,18 @@ input:-webkit-autofill {
 .nav-bg {
   background-color: #000;
 }
-.forum_navIcon_adjust{
+.forum_navIcon_adjust {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
-  padding:5px 0;
+  padding: 5px 0;
+}
+.forum_navIcon_adjust select {
+  border: 0px;
+  background-color: #000;
+  color: #fff;
+  margin-left: 8px;
+  font-weight: 500;
 }
 .nav i {
   display: block;
@@ -85,8 +92,8 @@ input:-webkit-autofill {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 15px;
-  width:30px;
-  height:30px;
+  width: 30px;
+  height: 30px;
   /* border:1px solid red; */
 }
 .nav a {
@@ -123,3 +130,4 @@ input:-webkit-autofill {
   color: #05f2f2;
 }
 /* end navbar */
+
