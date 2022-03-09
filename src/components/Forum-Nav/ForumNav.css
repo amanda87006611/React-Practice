@@ -55,12 +55,18 @@ input:-webkit-autofill {
 .forum_nav_item {
   font-size: 14px;
 }
+
 @media (min-width: 1401px) {
   .forum_nav_item {
     /* font-size: 15px; */
     margin-left: 5px;
     letter-spacing:1px;
   }
+}
+
+.forum_nav_a-group i:active{
+  background-color:#023E73;
+  border-left:3px solid #05f2f2;
 }
 
 .nav ul {

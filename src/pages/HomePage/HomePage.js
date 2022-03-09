@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import './HomePage.css'
 import ForumNav from './../../components/Forum-Nav'
+import PublishPage from './../PublishPage'
 
 const Root = styled.div`
   ${'' /* border: 1px solid red; */}

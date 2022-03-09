@@ -28,7 +28,7 @@ export default function ForumNav() {
           >
             文章分類
           </p>
-          <div className="a-group">
+          <div className="forum_nav_a-group">
             <i className="fa-solid fa-border-all">
               <a href="/#" className="forum_nav_item">
                 全部

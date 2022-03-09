@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useHistory } from 'react-router-dom'
 // import { getPost, getResponse } from '../../data/WebApi'
 import './PublishPage.css'
 import ForumNav from '../../components/Forum-Nav'
@@ -18,6 +18,57 @@ const AllDisplayFlex = styled.div`
 `
 
 export default function PublishPage() {
+  const [posts, setPosts] = useState([])
+  const [titleValue, setTitleValue] = useState(null)
+  const [contentValue, setContentValue] = useState(null)
+  const [categoryValue, setCategoryValue] = useState(null)
+  const [hashtagOneValue, setHashtagOneValue] = useState(null)
+  const [hashtagtwoValue, setHashTagTwoValue] = useState(null)
+  let history = useHistory()
+
+  const handleInputChange = (e) => {
+    setTitleValue(e.target.value)
+  }
+  const handleTextareaChange = (e) => {
+    setContentValue(e.target.value)
+  }
+
+  const handleCategoryChange = (e) => {
+    setCategoryValue(e.target.value)
+  }
+
+  const handleHashtagOneChange = (e) => {
+    setHashtagOneValue(e.target.value)
+  }
+  const handleHashtagTwoChange = (e) => {
+    setHashTagTwoValue(e.target.value)
+  }
+
+  const handleFormSubmit = (e) => {
+    // e.preventDefault()
+    fetch('http://localhost:3000/forum_index/forumArticle_insert', {
+      // 修改
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        art_category_sid: categoryValue,
+        art_title: titleValue,
+        art_content: contentValue,
+        hashtag1: hashtagOneValue,
+        hashtag2: hashtagtwoValue,
+      }),
+    })
+      .then((res) => res.jon())
+      .then((data) => {
+        return fetch('http://localhost:3000/forum-list-connectTry')
+          .then((res) => res.json())
+          .then((posts) => setPosts(posts))
+      })
+    history.push('/')
+  }
+
   return (
     <Root>
       <AllDisplayFlex>
@@ -49,28 +100,61 @@ export default function PublishPage() {
                 </div>
               </div>
 
-              <form style={{ margin: '0 20px' }}>
+              <form style={{ margin: '0 20px' }} onSubmit={handleFormSubmit}>
                 <label for="categories" class="form-label">
                   Categories 文章分類
                 </label>
                 <select
                   class="form-select mb-3 col-12"
                   aria-label="Default select example"
+                  onChange={handleCategoryChange}
+                  value={categoryValue}
                 >
                   <option selected></option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                  <option value="1">事前準備</option>
+                  <option value="2">旅遊心得</option>
+                  <option value="3">太空冷知識</option>
+                  <option value="4">星球介紹</option>
+                  <option value="5">音樂推薦</option>
+                  <option value="6">星座</option>
+                  <option value="7">太空美食</option>
+                  <option value="8">每月主打</option>
+                  <option value="10">注意事項</option>
                 </select>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">
                     Title 標題
                   </label>
                   <input
-                    type="email"
+                    type="text"
                     class="form-control"
                     id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
+                    value={titleValue}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">
+                    HashTag 1
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    value={hashtagOneValue}
+                    onChange={handleHashtagOneChange}
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">
+                    HashTag 2
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    value={hashtagtwoValue}
+                    onChange={handleHashtagTwoChange}
                   />
                 </div>
                 <div class="mb-3">
@@ -82,6 +166,8 @@ export default function PublishPage() {
                       name="text"
                       id="text"
                       style={{ width: '100%', height: '200px' }}
+                      value={contentValue}
+                      onChange={handleTextareaChange}
                     ></textarea>
                   </div>
                 </div>
