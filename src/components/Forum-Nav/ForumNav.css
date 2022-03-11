@@ -10,7 +10,7 @@ body {
 }
 
 /* chrome的input樣式 */
-input:-webkit-autofill {
+.forum-input-wrapper input:-webkit-autofill {
   -webkit-animation: autofill-fix 1s infinite;
   /* -webkit-text-fill-color: #fff; */
 }
@@ -22,14 +22,8 @@ input:-webkit-autofill {
     background-color: transparent;
   }
 }
-.all-display-flex {
-  display: flex;
-}
 /* start navbar */
-.wrap-background {
-  background-color: #000;
-}
-#navbar {
+.nav.forum_nav {
   /* position: fixed; */
   left: 0;
   top: 0;
@@ -38,17 +32,17 @@ input:-webkit-autofill {
   position: sticky;
 }
 @media (max-width: 600px) {
-  .nav {
+  .nav.forum_nav {
     display: none;
   }
 }
 @media (min-width: 1200px) and (max-width: 1400px) {
-  .nav {
+  .nav.forum_nav {
     margin-left: 8px;
   }
 }
 @media (min-width: 1401px) {
-  .nav {
+  .nav.forum_nav {
     margin-left: 5px;
     margin-right: 10px;
   }
@@ -65,10 +59,10 @@ input:-webkit-autofill {
   }
 }
 
-.nav ul {
+.nav.forum_nav ul {
   margin-top: 70px;
 }
-.nav-bg {
+.forum_nav-bg {
   background-color: #000;
 }
 .forum_navIcon_adjust {
@@ -84,7 +78,7 @@ input:-webkit-autofill {
   margin-left: 8px;
   font-weight: 500;
 }
-.nav i {
+.nav.forum_nav i {
   display: block;
   /* margin-bottom: 10px; */
   font-size: 12px;
@@ -96,18 +90,18 @@ input:-webkit-autofill {
   height: 30px;
   /* border:1px solid red; */
 }
-.nav a {
+.nav.forum_nav a {
   font-family: 'Noto Sans HK', sans-serif;
   font-weight: 500;
   margin-left: 10px;
   color: #fff;
 }
 
-.nav li p {
+.nav.forum_nav li p {
   font-size: 12px;
   color: #808080;
 }
-.search-bar {
+.forum_nav-search-bar {
   background-color: #000;
   width: 70%;
   height: 25px;
@@ -115,7 +109,7 @@ input:-webkit-autofill {
   font-size: 12px;
   border: 1px solid #05f2f2;
 }
-.input-wrapper {
+.forum-input-wrapper {
   display: inline-block;
   position: relative;
   margin-bottom: 10px;

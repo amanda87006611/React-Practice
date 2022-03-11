@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link, useLocation } from 'react-router-dom'
 // location可以拿到網址
 import LogInPage from '../../pages/LogInPage'
-import HomePage from '../../pages/HomePage'
+import HomePage from '../../pages/ForumHomePage'
 
 const HeaderContainer = styled.div`
   height: 64px;

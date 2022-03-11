@@ -18,17 +18,15 @@ const ForunArticalAll = styled(Link)`
 export default function ForumNav() {
   const location = useLocation()
   return (
-    // <div className="wrap-background">
-    // <div className="all-display-flex">
     <div
-      className="nav nav-bg d-flex flex-column flex-shrink-0 p-3"
+      className="nav forum_nav-bg d-flex flex-column flex-shrink-0 p-3 forum_nav"
       id="navbar"
     >
       <ul className="nav nav-pills flex-column mb-auto">
         <li>
-          <div className="input-wrapper">
+          <div className="forum-input-wrapper">
             <input
-              className="search-bar form-control me-2"
+              className="forum_nav-search-bar form-control me-2"
               type="search"
               placeholder="Search"
               aria-label="Search"

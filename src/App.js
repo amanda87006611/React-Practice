@@ -2,11 +2,11 @@
 import styled from 'styled-components'
 
 import LogInPage from './pages/LogInPage'
-import HomePage from './pages/HomePage'
-import SinglePostPage from './pages/SinglePostPage'
-import PublishPage from './pages/PublishPage'
-import UArticlePage from './pages/UArticlePage'
-import PostCategoryPage from './pages/PostCategoryPage'
+import ForumHomePage from './pages/ForumHomePage'
+import ForumSinglePostPage from './pages/ForumSinglePostPage'
+import ForumPublishPage from './pages/ForumPublishPage'
+import ForumUArticlePage from './pages/ForumUArticlePage'
+import ForumPostCategoryPage from './pages/ForumPostCategoryPage'
 import Header from './components/Header'
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 
@@ -27,19 +27,19 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/">
-            <HomePage />
+            <ForumHomePage />
           </Route>
           <Route path="/posts/:sid">
-            <SinglePostPage />
+            <ForumSinglePostPage />
           </Route>
           <Route path="/posts-category/:art_category_sid">
-            <PostCategoryPage />
+            <ForumPostCategoryPage />
           </Route>
           <Route path="/u-apexion-articles">
-            <UArticlePage />
+            <ForumUArticlePage />
           </Route>
           <Route path="/publish">
-            <PublishPage />
+            <ForumPublishPage />
           </Route>
           <Route exact path="/logIn">
             <LogInPage />
